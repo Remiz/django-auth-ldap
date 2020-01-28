@@ -443,6 +443,8 @@ class _LDAPUser(object):
                 "{} while authenticating {}".format(e, self._username)
             )
             raise
+            
+        self._get_connection().unbind_s()
 
         return user
 
